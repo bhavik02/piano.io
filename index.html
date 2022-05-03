@@ -27,7 +27,7 @@ user-select:none;}
 @media (max-width:630px){
 #pbox{ transform:rotate(90deg); margin-top:50%; margin-left:15%; width:900px;}
 .wht{height:50vh; width:100px;}
-.bk{width:50px; height:150px;}
+.bk{width:50px; height:170px;}
 .c1{margin-right:70px;}
 .c2{margin-right:90px;}
 .c3{margin-right:110px;}
@@ -84,7 +84,7 @@ body{width:100%; height:100vh; overflow:hidden;}
 
 
 <script>
-
+alert("zoom out the screen to see full keyboard");
 const btns = document.querySelectorAll(".btn");
 btns.forEach(btn=>{btn.addEventListener("click",()=> playsound(btn));});
 function playsound(btn){
@@ -93,6 +93,7 @@ function playsound(btn){
 	sound.play();
 }
 
+	
 
 </script>
 </body>
