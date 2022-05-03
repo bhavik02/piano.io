@@ -1,0 +1,99 @@
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<style>
+*{margin:0; padding:0; box-sizing:border-box;}
+
+#pbox{background:#dd2222; width:610px;  padding:20px; padding-left:50px; padding-top:20px; border-radius:20px;}
+body{display:flex; align-items:center; justify-content:center; background:#dfdfdf;}
+#mainbox{display:flex; margin-top:25px;  }
+
+h3{color:white; text-shadow:1px 1px 1px black;}
+.wht{position:relative; background:white; width:70px; height:200px; border:1.5px solid black; margin-left:1px; border-radius:6px; box-shadow:-2px -2px 4px rgba(255,255,255,0.2), 3px 3px 5px rgba(0,0,0,0.7);}
+.wht h2{position:absolute; left:50%; bottom:5%;transform:translate(-50%,-5%);
+user-select:none;}
+.bk h4{color:white; margin-top:60px; margin-left:6px; user-select:none;}
+.wht:active{ box-shadow:-3px -3px 6px rgba(255,255,255,0.9), 3px 1px 0px rgba(0,0,0,0.7);}
+.bk{width:38px; height:110px; border-radius:5px;  background:black; margin:0 -18.5px; z-index:1; box-shadow:-2px -2px 1px rgba(255,255,255,0.3), 2px 2px 2px rgba(0,0,0,0.5);}
+.bk:active{ box-shadow:-3px -3px 6px rgba(255,255,255,0.9), 3px 1px 0px rgba(0,0,0,0.7);}
+
+.circle{width:10px; height:10px; border-radius:50%; background:white; border:1px solid white; padding:5px; float:right; margin-top:-15px; }
+.c1{margin-right:30px;}
+.c2{margin-right:50px;}
+.c3{margin-right:70px;}
+#fbtn{margin-left:2px;}
+@media (max-width:630px){
+#pbox{ transform:rotate(90deg); margin-top:50%; margin-left:15%; width:900px;}
+.wht{height:50vh; width:100px;}
+.bk{width:50px; height:150px;}
+.c1{margin-right:70px;}
+.c2{margin-right:90px;}
+.c3{margin-right:110px;}
+
+body{width:100%; height:100vh; overflow:hidden;}
+#fbtn{margin-left:15px;}
+
+}
+</style>
+</head>
+<body>
+<div id="container">
+
+<div id="pbox">
+<h3 >javascript piano</h3>
+<div class="circle c1"> </div>
+<div class="circle c2"> </div>
+<div class="circle c3"> </div>
+  <div id="mainbox">
+     
+	<div data-key="C" class="wht btn"><h2>C</h2></div>
+	<div data-key="Chsh" class="bk btn"><h4>C#</h4></div>
+	
+	<div data-key="D" class="wht btn"><h2>D</h2></div>
+	<div data-key="Dhsh" class="bk btn"><h4>D#</h4></div>
+	
+	<div data-key="E" class="wht btn"><h2>E</h2></div>
+	
+	<div data-key="F" class="wht btn" id="fbtn"><h2>F</h2></div>
+	<div data-key="Fhsh" class="bk btn"><h4>F#</h4></div>
+	
+	<div data-key="G" class="wht btn"><h2>G</h2></div>
+	<div data-key="Ghsh" class="bk btn"><h4>G#</h4></div>
+	
+	<div data-key="A" class="wht btn"><h2>A</h2></div>
+	<div data-key="Ahsh" class="bk btn"><h4>A#</h4></div>
+	
+	<div data-key="B" class="wht btn"><h2>B</h2></div>
+  </div>
+</div>
+</div>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\Akey.mp3" id="A"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\Bkey.mp3" id="B"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\Ckey.mp3" id="C"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\Dkey.mp3" id="D"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\Ekey.mp3" id="E"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\Fkey.mp3" id="F"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\Gkey.mp3" id="G"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\AHkey.mp3" id="Ahsh"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\DHkey.mp3" id="Dhsh"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\CHkey.mp3" id="Chsh"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\FHkey.mp3" id="Fhsh"></audio>
+<audio src="C:\Users\Jasdev Singh\Downloads\pianokey\GHkey.mp3" id="Ghsh"></audio>
+
+
+<script>
+
+const btns = document.querySelectorAll(".btn");
+btns.forEach(btn=>{btn.addEventListener("click",()=> playsound(btn));});
+function playsound(btn){
+    const sound= document.getElementById(btn.dataset.key);
+	sound.currentTime=0;
+	sound.play();
+}
+console.log(outerHeight);
+
+</script>
+</body>
+</html>
